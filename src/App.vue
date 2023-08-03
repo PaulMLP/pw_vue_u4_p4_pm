@@ -1,16 +1,30 @@
 <template>
-<Estudiante/>
+  <nav>
+    <ul>
+      <router-link to="/">Consular</router-link>
+      |
+      <router-link to="/registro">Agregar</router-link>
+      |
+      <router-link to="/actualizar">Actualizar</router-link>
+      |
+      <router-link to="/eliminar">Eliminar</router-link>
+    </ul>
+  </nav>
+
+  <router-view class="view" />
 </template>
 
 <script>
-import Estudiante from './modules/estudiante/pages/Estudiante.vue'
+import Estudiante from "./modules/estudiante/pages/ConsultaEstudiante.vue";
+import GuardaEstudiante from "./modules/estudiante/pages/GuardaEstudiante.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Estudiante
-  }
-}
+    Estudiante,
+    GuardaEstudiante,
+  },
+};
 </script>
 
 <style>
@@ -21,5 +35,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+nav a.router-link-exact-active {
+  color: black;
+}
+a {
+  color: grey;
 }
 </style>
