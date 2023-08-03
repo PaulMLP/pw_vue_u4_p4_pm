@@ -1,12 +1,12 @@
 <template>
   <div class="estudiante">
     <h1>Actualizar</h1>
-    <DatosActualizarEstudiante/>
+    <DatosActualizarEstudiante />
   </div>
 </template>
 
 <script>
-import DatosActualizarEstudiante from '../components/DatosActualizarEstudiante.vue';
+import DatosActualizarEstudiante from "../components/DatosActualizarEstudiante.vue";
 export default {
   components: {
     DatosActualizarEstudiante,
@@ -14,4 +14,5 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>

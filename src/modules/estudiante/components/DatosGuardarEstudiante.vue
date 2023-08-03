@@ -1,30 +1,45 @@
 <template>
   <div class="datos-estu-cont">
     <div class="datos-estudiante">
-      <label for="cedula">Cedula</label>
-      <input type="text" v-model="cedula" placeholder="ingrese cedula" />
-      <label for="nombre">Nombre</label>
-      <input
-        id="nombre"
-        type="text"
-        v-model="nombre"
-        placeholder="ingrese nombre"
-      />
-      <label for="apellido">Apellido</label>
-      <input
-        id="apellido"
-        type="text"
-        v-model="apellido"
-        placeholder="ingrese apellido"
-      />
-      <label for="provincia">Provincia</label>
-      <input
-        id="provincia"
-        type="text"
-        v-model="provincia"
-        placeholder="ingrese provincia"
-      />
-      <button @click="guardarEstudiante">Guardar</button>
+      <div class="campos">
+        <label for="cedula">Cedula</label>
+        <input
+          id="cedula"
+          type="text"
+          v-model="cedula"
+          placeholder="Ingrese cedula"
+        />
+      </div>
+      <div class="campos">
+        <label for="nombre">Nombre</label>
+        <input
+          id="nombre"
+          type="text"
+          v-model="nombre"
+          placeholder="Ingrese nombre"
+        />
+      </div>
+      <div class="campos">
+        <label for="apellido">Apellido</label>
+        <input
+          id="apellido"
+          type="text"
+          v-model="apellido"
+          placeholder="Ingrese apellido"
+        />
+      </div>
+      <div class="campos">
+        <label for="provincia">Provincia</label>
+        <input
+          id="provincia"
+          type="text"
+          v-model="provincia"
+          placeholder="Ingrese provincia"
+        />
+      </div>
+      <div class="button">
+        <button @click="guardarEstudiante">Guardar</button>
+      </div>
     </div>
   </div>
 </template>
@@ -42,7 +57,7 @@ export default {
     };
   },
   methods: {
-    async guardarEstudiante() {
+    guardarEstudiante() {
       const data = {
         cedula: this.cedula,
         nombre: this.nombre,
@@ -55,15 +70,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.datos-estu-cont {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.datos-estudiante {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-</style>
+<style scoped src="../css/formulario.css"></style>

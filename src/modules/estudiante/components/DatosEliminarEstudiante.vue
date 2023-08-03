@@ -1,9 +1,13 @@
 <template>
   <div class="datos-estu-cont">
     <div class="datos-estudiante">
-      <label for="id">Id</label>
-      <input id="id" type="text" v-model="id" placeholder="ingrese id" />
-      <button @click="eliminarEstudiante">Eliminar</button>
+      <div class="campos">
+        <label for="id">Id</label>
+        <input id="id" type="text" v-model="id" placeholder="Ingrese id" />
+      </div>
+      <div class="button">
+        <button @click="eliminarEstudiante">Eliminar</button>
+      </div>
     </div>
     <div v-if="estudiante" class="info">
       <h5>Estudiante eliminado</h5>
@@ -30,15 +34,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.datos-estu-cont {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.datos-estudiante {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-</style>
+<style scoped src="../css/formulario.css"></style>

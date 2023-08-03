@@ -1,20 +1,12 @@
 <template>
-  <nav>
-    <ul>
-      <router-link to="/">Consular</router-link>
-      |
-      <router-link to="/registro">Agregar</router-link>
-      |
-      <router-link to="/actualizar">Actualizar</router-link>
-      |
-      <router-link to="/eliminar">Eliminar</router-link>
-    </ul>
-  </nav>
-
-  <router-view class="view" />
+  <div class="app">
+    <NavBar />
+    <router-view class="view" />
+  </div>
 </template>
 
 <script>
+import NavBar from "./modules/estudiante/components/NavBar.vue";
 import Estudiante from "./modules/estudiante/pages/ConsultaEstudiante.vue";
 import GuardaEstudiante from "./modules/estudiante/pages/GuardaEstudiante.vue";
 
@@ -23,23 +15,24 @@ export default {
   components: {
     Estudiante,
     GuardaEstudiante,
+    NavBar,
   },
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.app {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
 }
-nav a.router-link-exact-active {
-  color: black;
+h1 {
+ text-align: center;
+ margin: 50px;
+ cursor: default;
 }
-a {
-  color: grey;
+.view {
+  flex-grow: 1;
+  padding: 0px 10px;
 }
 </style>
