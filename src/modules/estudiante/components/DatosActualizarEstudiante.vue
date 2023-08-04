@@ -1,6 +1,6 @@
 <template>
-  <div class="datos-estu-cont">
-    <div class="datos-estudiante">
+  <div class="datos-estu-cont" >
+    <div class="datos-estudiante" style="padding-bottom: 10px;">
       <div class="campos">
         <label for="id">Id</label>
         <input id="id" type="text" v-model="id" placeholder="ingrese id" />
@@ -33,6 +33,15 @@
         />
       </div>
       <div class="campos">
+        <label for="fecha">Fecha Nacimiento</label>
+        <input
+          type="date"
+          id="fecha"
+          name="trip-start"
+          v-model="fechaNacimiento"
+        />
+      </div>
+      <div class="campos">
         <label for="provincia">Provincia</label>
         <input
           id="provincia"
@@ -42,7 +51,7 @@
         />
       </div>
       <div class="button">
-        <button @click="guardarEstudiante">Actualizar</button>
+        <button @click="guardarEstudiante" id="act-button">Actualizar</button>
       </div>
     </div>
   </div>
@@ -59,6 +68,7 @@ export default {
       nombre: null,
       apellido: null,
       provincia: null,
+      fechaNacimiento: null,
     };
   },
   methods: {
@@ -68,6 +78,7 @@ export default {
         nombre: this.nombre,
         apellido: this.apellido,
         provincia: this.provincia,
+        fechaNacimiento: (this.fechaNacimiento += "T00:00:00"),
       };
       actualizarEstudianteFachada(data, this.id);
     },

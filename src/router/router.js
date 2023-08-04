@@ -5,7 +5,7 @@ const routes = [
     redirect: "/consultar",
   },
   {
-    path: "/consultar",
+    path: "/consultar/:cedula",
     component: () => import("@/modules/estudiante/pages/ConsultaEstudiante"),
   },
   {
@@ -19,6 +19,11 @@ const routes = [
   {
     path: "/eliminar",
     component: () => import("@/modules/estudiante/pages/EliminarEstudiante"),
+  },
+  {
+    path: "/:pathMatch(.*)*", //wildcard
+    name: "error404",
+    component: () => import("@/modules/estudiante/pages/NotFound"),
   },
 ];
 

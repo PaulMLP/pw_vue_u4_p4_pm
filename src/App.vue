@@ -28,7 +28,7 @@ export default {
 }
 h1 {
  text-align: center;
- margin: 50px;
+ margin: 30px;
  cursor: default;
 }
 .view {

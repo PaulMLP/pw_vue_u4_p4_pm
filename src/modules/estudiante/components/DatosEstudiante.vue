@@ -3,12 +3,7 @@
     <div class="datos-estudiante">
       <label for="cedula">Cedula</label>
       <div class="cedula">
-        <input
-          id="cedula"
-          type="text"
-          v-model="cedula"
-          placeholder="Ingrese cedula"
-        />
+        <input id="cedula" type="text" v-model="cedula" />
         <div class="buscar" @click="consultarEstudiante">🔎</div>
       </div>
     </div>
@@ -21,6 +16,10 @@
         <label for="apellido">Apellido</label>
         <input id="apellido" type="text" v-model="apellido" disabled />
       </div>
+      <div class="campos">
+        <label for="provincia">Provincia</label>
+        <input id="provincia" type="text" v-model="provincia" disabled />
+      </div>
     </div>
   </div>
 </template>
@@ -31,16 +30,27 @@ import { obtenerEstudianteFachada } from "@/modules/estudiante/helpers/Estudiant
 export default {
   data() {
     return {
-      cedula: null,
-      nombre: "",
-      apellido: "",
+      cedula: this.$route.params.cedula,
+      nombre: null,
+      apellido: null,
+      provincia: null,
     };
+  },
+  mounted() {
+    const { cedula } = this.$route.params; //arreglo de todos los path variables que correspondan a esta ruta
+    console.log(this.$route);
+    const { provincia } = this.$route.query;
+    console.log(provincia);
+    this.consultarEstudiante();
+    //http://localhost:8081/..../estudiantes/{}
   },
   methods: {
     async consultarEstudiante() {
       const data = await obtenerEstudianteFachada(this.cedula);
+      this.cedula = data.cedula;
       this.nombre = data.nombre;
       this.apellido = data.apellido;
+      this.provincia = data.provincia;
     },
   },
 };

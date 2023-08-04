@@ -29,6 +29,15 @@
         />
       </div>
       <div class="campos">
+        <label for="fecha">Fecha Nacimiento</label>
+        <input
+          type="date"
+          id="fecha"
+          name="trip-start"
+          v-model="fechaNacimiento"
+        />
+      </div>
+      <div class="campos">
         <label for="provincia">Provincia</label>
         <input
           id="provincia"
@@ -54,6 +63,7 @@ export default {
       nombre: null,
       apellido: null,
       provincia: null,
+      fechaNacimiento: null,
     };
   },
   methods: {
@@ -63,8 +73,17 @@ export default {
         nombre: this.nombre,
         apellido: this.apellido,
         provincia: this.provincia,
+        fechaNacimiento: (this.fechaNacimiento += "T00:00:00"),
       };
       ingresarEstudianteFachada(data);
+      console.log("guardado")
+      this.reiniciarVariables();
+    },
+    reiniciarVariables() {
+      this.cedula = null;
+      this.nombre = null;
+      this.apellido = null;
+      this.provincia = null;
     },
   },
 };

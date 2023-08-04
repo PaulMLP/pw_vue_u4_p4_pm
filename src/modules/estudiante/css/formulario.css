@@ -1,61 +1,73 @@
 .datos-estu-cont {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .datos-estudiante {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 30px;
-    width: 300px;
-    padding: 30px;
-    box-shadow: 0 0 10px gray;
-    border: solid 1px rgb(204, 203, 203);
-    border-radius: 5px;
-  }
-  label,
-  input {
-    width: 100%;
-    height: fit-content;
-    outline: none;
-    margin: 5px 0px;
-    padding: 0;
-  }
-  
-  input {
-    padding: 5px 0px;
-    border: none;
-    border-bottom: solid #51ae55 1px;
-  }
-  
-  input::placeholder{
-    color: rgba(0,0,0,0.3);
-  }
-  
-  .campos,
-  .button {
-    width: 100%;
-  }
-  
-  .button {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    outline: none;
-    cursor: pointer;
-    background: #51ae55;
-    color: white;
-    font-weight: bold;
-    border: solid #43ab48;
-  }
-  button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 5px gray;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.datos-estudiante {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  width: 300px;
+  padding: 30px;
+  box-shadow: 0 0 10px gray;
+  border: solid 1px rgb(204, 203, 203);
+  border-radius: 5px;
+}
+label,
+input {
+  width: 100%;
+  height: fit-content;
+  outline: none;
+  margin: 5px 0px;
+  padding: 0;
+}
+
+input {
+  padding: 5px 0px;
+  border: none;
+  border-bottom: solid #51ae55 1px;
+}
+
+input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.campos,
+.button {
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  background: #51ae55;
+  color: white;
+  font-weight: bold;
+  border: solid #43ab48;
+}
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px gray;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+h5 {
+  border: solid #82e287;
+  padding: 10px;
+  background: #92e596;
+  border-radius: 5px;
+  box-shadow: 0 0 10px gray;
+}

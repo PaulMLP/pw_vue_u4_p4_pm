@@ -10,14 +10,17 @@
       </div>
     </div>
     <div v-if="estudiante" class="info">
-      <h5>Estudiante eliminado</h5>
+      <h5 style="text-align: center">
+        Se a eliminado el estudiante <br />
+        {{ estudiante.nombre }} con cédula:
+        {{ estudiante.cedula }}
+      </h5>
     </div>
   </div>
 </template>
 
 <script>
 import { eliminarEstudianteFachada } from "@/modules/estudiante/helpers/EstudianteCliente";
-
 export default {
   data() {
     return {
@@ -28,7 +31,9 @@ export default {
   methods: {
     async eliminarEstudiante() {
       this.estudiante = await eliminarEstudianteFachada(this.id);
-      console.log(this.estudiante);
+      setTimeout(() => {
+        this.estudiante = null;
+      }, 5000);
     },
   },
 };
