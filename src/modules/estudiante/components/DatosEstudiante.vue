@@ -31,9 +31,9 @@ export default {
   data() {
     return {
       cedula: this.$route.params.cedula,
-      nombre: null,
-      apellido: null,
-      provincia: null,
+      nombre: "",
+      apellido: "",
+      provincia: "",
     };
   },
   mounted() {
@@ -41,8 +41,10 @@ export default {
     console.log(this.$route);
     const { provincia } = this.$route.query;
     console.log(provincia);
-    this.consultarEstudiante();
-    //http://localhost:8081/..../estudiantes/{}
+
+    if (cedula) {
+      this.consultarEstudiante();
+    }
   },
   methods: {
     async consultarEstudiante() {

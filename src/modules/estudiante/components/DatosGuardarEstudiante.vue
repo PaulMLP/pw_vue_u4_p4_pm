@@ -75,9 +75,13 @@ export default {
         provincia: this.provincia,
         fechaNacimiento: (this.fechaNacimiento += "T00:00:00"),
       };
-      ingresarEstudianteFachada(data);
-      console.log("guardado")
-      this.reiniciarVariables();
+      try {
+        ingresarEstudianteFachada(data);
+        console.log("guardado");
+        this.reiniciarVariables();
+      } catch (error) {
+        console.log("No se pudo guardar estudiante ", error);
+      }
     },
     reiniciarVariables() {
       this.cedula = null;

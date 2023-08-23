@@ -5,6 +5,11 @@ const routes = [
     redirect: "/consultar",
   },
   {
+    path: "/consultar",
+    name: "consultar",
+    component: () => import("@/modules/estudiante/pages/ConsultaEstudiante"),
+  },
+  {
     path: "/consultar/:cedula",
     component: () => import("@/modules/estudiante/pages/ConsultaEstudiante"),
   },
