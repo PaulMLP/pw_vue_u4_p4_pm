@@ -47,7 +47,13 @@
         />
       </div>
       <div class="button">
-        <button @click="guardarEstudiante">Guardar</button>
+        <button
+          type="button"
+          class="btn btn-outline-success"
+          @click="guardarEstudiante"
+        >
+          Guardar
+        </button>
       </div>
     </div>
   </div>
